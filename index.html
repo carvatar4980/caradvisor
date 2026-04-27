@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car어드바이저 — 중고차 구매·매각 컨설팅</title>
+<title>Car어드바이저-카바타 — 중고차 구매·매각 컨설팅</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -41,6 +41,15 @@ body{font-family:var(--ff-sans);color:var(--text);background:#fff;overflow-x:hid
 a{text-decoration:none;color:inherit}
 button{font-family:var(--ff-sans);cursor:pointer;border:none;outline:none}
 
+/* 카바타 전용 포인트 스타일 */
+.kabata-point {
+  font-family: var(--ff-serif);
+  color: var(--gold3);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
 /* ════ NAV ════ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:999;
@@ -52,7 +61,6 @@ nav{
 }
 nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .nav-logo{display:flex;align-items:center;gap:11px}
-/* 브랜드: Car만 골드, 어드바이저는 흰색 동일색 */
 .nav-brand{font-family:var(--ff-serif);font-size:20px;font-weight:600;letter-spacing:.01em}
 .nav-brand .car{color:var(--gold2)}
 .nav-brand .rest{color:#fff}
@@ -152,7 +160,6 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 }
 
 /* ════ SECTION COMMON ════ */
-/* 섹션 배경: 밝게 유지 → 가독성 최우선 */
 .sec{padding:88px 5%}
 .sec-inner{max-width:1120px;margin:0 auto}
 .sec-lbl{
@@ -170,7 +177,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .sec-h em{color:var(--gold);font-style:italic}
 .sec-p{font-size:15px;color:var(--soft);line-height:1.9;max-width:560px;word-break:keep-all}
 
-/* ════ SERVICES ════ — 밝은 배경 */
+/* ════ SERVICES ════ */
 .services{background:var(--cream)}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
 .svc-card{
@@ -215,7 +222,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
   font-family:var(--ff-mono);
 }
 
-/* ════ WHY ════ — 흰 배경, 진한 텍스트 */
+/* ════ WHY ════ */
 .why{background:#fff}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
 .why-card{
@@ -249,7 +256,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .trust-n{font-family:var(--ff-serif);font-size:32px;color:var(--gold2);line-height:1;font-weight:600}
 .trust-l{font-size:11px;color:rgba(255,255,255,.38);margin-top:5px;letter-spacing:.05em}
 
-/* ════ COMPARE ════ — 살짝 어두운 배경, 텍스트는 진하게 */
+/* ════ COMPARE ════ */
 .compare{background:var(--ink2)}
 .compare .sec-lbl{color:var(--gold2)}
 .compare .sec-lbl::before{background:var(--gold2)}
@@ -270,11 +277,10 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
   margin-top:24px;padding:18px 22px;border-radius:8px;
   background:rgba(184,146,62,.09);border:1px solid rgba(184,146,62,.2);
 }
-/* 비교 섹션 내 텍스트 가독성: 충분히 밝게 */
 .cmp-note p{font-size:14px;color:rgba(255,255,255,.72);line-height:1.85;word-break:keep-all}
 .cmp-note strong{color:var(--gold2)}
 
-/* ════ PROCESS ════ — 크림 배경 */
+/* ════ PROCESS ════ */
 .process{background:var(--cream)}
 .proc-tabs{display:flex;gap:0;margin-top:38px;margin-bottom:0;border-bottom:1.5px solid var(--line)}
 .ptab{
@@ -310,7 +316,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .ps-tag.p{background:#ECF0F8;color:var(--ink2)}
 .ps-tag.k{background:var(--ink);color:var(--gold2)}
 
-/* ════ ACQ SECTION ════ — 흰 배경 */
+/* ════ ACQ SECTION ════ */
 .acq{background:#fff}
 .acq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
 .acq-items{display:flex;flex-direction:column;gap:18px}
@@ -354,7 +360,6 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .ftab.on{color:var(--gold2);border-bottom-color:var(--gold)}
 .fpanel{display:none;margin-top:34px}
 .fpanel.on{display:grid;grid-template-columns:1fr 1.2fr;gap:52px;align-items:start}
-/* form info 텍스트 충분히 밝게 */
 .fi-wrap h3{font-family:var(--ff-serif);font-size:19px;color:#fff;margin-bottom:14px;line-height:1.4;word-break:keep-all}
 .fi-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:26px}
 .fi-list li{display:flex;gap:12px;align-items:flex-start}
@@ -369,7 +374,6 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .kakao-btn:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(254,229,0,.28)}
 .fi-disc{margin-top:16px;padding:12px 15px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
 .fi-disc p{font-size:11px;color:rgba(255,255,255,.3);line-height:1.75;word-break:keep-all}
-/* form card */
 .fcard{
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
   border-radius:12px;padding:32px;backdrop-filter:blur(18px);
@@ -408,7 +412,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .f-success h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;word-break:keep-all}
 .f-success p{font-size:13px;color:rgba(255,255,255,.52);line-height:1.85;word-break:keep-all}
 
-/* ════ FAQ ════ — 크림 배경, 검정 텍스트 (가장 읽기 편함) */
+/* ════ FAQ ════ */
 .faq{background:var(--cream)}
 .faq-list{margin-top:46px;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1.5px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
@@ -419,7 +423,6 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
   text-align:left;font-family:var(--ff-sans);transition:background .2s;
 }
 .faq-q:hover{background:#fff}
-/* FAQ 질문 텍스트: 가독성 최우선 */
 .faq-q span{font-size:14px;font-weight:600;color:var(--ink);word-break:keep-all}
 .faq-icon{font-size:19px;color:var(--gold);flex-shrink:0;transition:transform .3s}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
@@ -478,10 +481,9 @@ footer{background:var(--ink2);padding:46px 5% 30px}
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
 <nav id="topnav">
   <div class="nav-logo">
-    <div class="nav-brand"><span class="car">Car</span><span class="rest">어드바이저</span></div>
+    <div class="nav-brand"><span class="car">Car</span><span class="rest">어드바이저-<span class="kabata-point">카바타</span></span></div>
     <div class="nav-sep"></div>
     <span class="nav-sub">중고차 구매·매각 컨설팅</span>
   </div>
@@ -497,7 +499,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -510,7 +511,10 @@ footer{background:var(--ink2);padding:46px 5% 30px}
       <h1>차를 파는 사람과<br><em>차를 골라주는 사람</em>은<br>다릅니다.</h1>
       <p class="hero-sub">
         수수료가 어디서 나오느냐가 신뢰의 차이를 만듭니다.<br>
-        <strong>Car어드바이저는 구조적으로 고객 편입니다.</strong>
+        <strong>Car어드바이저-<span class="kabata-point">카바타</span>는 구조적으로 고객 편입니다.</strong><br>
+        <span style="display:inline-block; margin-top:12px; padding:6px 12px; background:rgba(184,146,62,.15); border-radius:6px; font-size:12.5px; color:var(--gold2); font-weight:500;">
+          💡 <strong>카바타(Car-vatar)란?</strong><br>고객님의 '아바타'가 되어, 내 차를 사고파는 마음으로 모든 과정을 완벽하게 대리합니다.
+        </span>
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-gold" onclick="openForm('buy')">구매 컨설팅 문의 →</a>
@@ -540,7 +544,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ TRUST STRIP ══ -->
 <div class="trust-strip">
   <div class="trust-inner">
     <div class="trust-item"><div class="trust-n">48h</div><div class="trust-l">후보 리스트 발송 보장</div></div>
@@ -551,12 +554,11 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </div>
 
-<!-- ══ SERVICES ══ -->
 <section class="sec services" id="services">
   <div class="sec-inner">
     <div class="sec-lbl fade-up">Services</div>
     <h2 class="sec-h fade-up">두 가지 <em>서비스</em></h2>
-    <p class="sec-p fade-up">구매가 필요한 분도, 팔고 싶은 분도 — Car어드바이저가 함께합니다.</p>
+    <p class="sec-p fade-up">구매가 필요한 분도, 팔고 싶은 분도 — Car어드바이저-<span class="kabata-point">카바타</span>가 함께합니다.</p>
     <div class="svc-grid">
       <div class="svc-card fade-up">
         <div class="svc-badge">9,900원~</div>
@@ -591,12 +593,11 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ WHY ══ -->
 <section class="sec why" id="why">
   <div class="sec-inner">
-    <div class="sec-lbl fade-up">Why Car어드바이저</div>
+    <div class="sec-lbl fade-up">Why Car어드바이저-<span class="kabata-point">카바타</span></div>
     <h2 class="sec-h fade-up">왜 <em>컨설팅</em>인가요</h2>
-    <p class="sec-p fade-up">변호사가 의뢰인 편인 이유는 착해서가 아니라, 수임료를 의뢰인에게서 받기 때문입니다. Car어드바이저도 같은 원리입니다.</p>
+    <p class="sec-p fade-up">변호사가 의뢰인 편인 이유는 착해서가 아니라, 수임료를 의뢰인에게서 받기 때문입니다. Car어드바이저-<span class="kabata-point">카바타</span>도 같은 원리입니다.</p>
     <div class="why-grid">
       <div class="why-card fade-up">
         <div class="w-icon">⚖️</div>
@@ -638,7 +639,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ COMPARE ══ -->
 <section class="sec compare">
   <div class="sec-inner">
     <div class="sec-lbl fade-up">Dealer vs Consultant</div>
@@ -650,7 +650,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <tr>
             <th>비교 항목</th>
             <th class="td">일반 중고차 딜러</th>
-            <th class="tc">Car어드바이저</th>
+            <th class="tc">Car어드바이저-<span class="kabata-point">카바타</span></th>
           </tr>
         </thead>
         <tbody>
@@ -664,12 +664,11 @@ footer{background:var(--ink2);padding:46px 5% 30px}
       </table>
     </div>
     <div class="cmp-note fade-up">
-      <p><strong>핵심 원리:</strong> 어느 쪽에서 돈을 받느냐가 누구 편이냐를 결정합니다. Car어드바이저는 고객에게 수수료를 받기 때문에, 구조적으로 고객 편일 수밖에 없습니다.</p>
+      <p><strong>핵심 원리:</strong> 어느 쪽에서 돈을 받느냐가 누구 편이냐를 결정합니다. Car어드바이저-<span class="kabata-point">카바타</span>는 고객에게 수수료를 받기 때문에, 구조적으로 고객 편일 수밖에 없습니다.</p>
     </div>
   </div>
 </section>
 
-<!-- ══ PROCESS ══ -->
 <section class="sec process" id="process">
   <div class="sec-inner">
     <div class="sec-lbl fade-up">How It Works</div>
@@ -700,7 +699,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ ACQ ══ -->
 <section class="sec acq">
   <div class="sec-inner">
     <div class="sec-lbl fade-up">내 차 매각</div>
@@ -733,7 +731,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <div class="acq-n">04</div>
           <div>
             <h4>서류·이전 전부 대행</h4>
-            <p>판매자는 차만 내주시면 됩니다. 이전 등록, 탁송, 서류 준비 모두 Car어드바이저가 처리합니다.</p>
+            <p>판매자는 차만 내주시면 됩니다. 이전 등록, 탁송, 서류 준비 모두 Car어드바이저-<span class="kabata-point">카바타</span>가 처리합니다.</p>
           </div>
         </div>
       </div>
@@ -749,7 +747,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
 <section class="sec faq" id="faq">
   <div class="sec-inner">
     <div class="sec-lbl fade-up">FAQ</div>
@@ -783,7 +780,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section class="sec contact" id="contact">
   <div class="contact-body">
     <div class="sec-lbl fade-up">문의하기</div>
@@ -794,7 +790,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
       <button class="ftab" id="ts" onclick="switchForm('sell')">🚗 내 차 팔기 문의</button>
     </div>
 
-    <!-- 구매 패널 -->
     <div class="fpanel on" id="pb2">
       <div class="fi-wrap fade-up">
         <h3>구매 컨설팅<br>이런 분께 맞습니다</h3>
@@ -819,9 +814,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
             <div class="fg"><label>지역 <span>*</span></label><input type="text" placeholder="예: 서울 강남, 경기 수원" required></div>
             <div class="fg"><label>희망 차종</label><input type="text" placeholder="예: 아반떼, SUV, 세단 등 자유롭게 입력"></div>
             <div class="fg"><label>추가 요청사항</label><textarea placeholder="예산, 용도, 색상, 기타 원하시는 조건을 자유롭게 적어주세요."></textarea></div>
-            <!-- 9900원 강력 강조 블록 -->
             <div style="border-radius:10px;overflow:hidden;margin-bottom:14px;border:1.5px solid #C8A050;">
-              <!-- 상단: 금액 강조 -->
               <div style="background:#C8A050;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
                 <div>
                   <div style="font-size:10px;font-weight:700;color:rgba(12,27,46,.65);letter-spacing:.12em;margin-bottom:3px;">착수 확인비</div>
@@ -829,7 +822,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
                 </div>
                 <div style="background:#0C1B2E;color:#C8A050;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.04em;">2회차 전액 환불</div>
               </div>
-              <!-- 하단: 노쇼 방지 설명 -->
               <div style="background:rgba(200,160,62,.08);padding:11px 16px;display:flex;flex-direction:column;gap:6px;">
                 <div style="display:flex;align-items:center;gap:7px;">
                   <div style="width:4px;height:4px;border-radius:50%;background:#C8A050;flex-shrink:0;"></div>
@@ -857,7 +849,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
       </div>
     </div>
 
-    <!-- 매각 패널 -->
     <div class="fpanel" id="ps2">
       <div class="fi-wrap fade-up">
         <h3>내 차 매각<br>이런 분께 맞습니다</h3>
@@ -894,7 +885,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
               </select>
             </div>
             <div class="fg"><label>추가 내용</label><textarea placeholder="특이 사항, 옵션, 기타 정보를 자유롭게 적어주세요."></textarea></div>
-            <!-- 신뢰 문구 -->
             <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;margin-bottom:12px;">
               <p style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.85;">
                 <strong style="color:rgba(255,255,255,.8);display:block;margin-bottom:4px;">계약금을 요구하지 않습니다.</strong>
@@ -914,13 +904,13 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
-        <div class="fw"><span class="car">Car</span><span class="rest">어드바이저</span></div>
-        <p>차를 파는 것과 차를 골라주는 것은 다릅니다.<br>Car어드바이저는 구조적으로 고객 편입니다.</p>
+        <div class="fw"><span class="car">Car</span><span class="rest">어드바이저-<span class="kabata-point">카바타</span></span></div>
+        <p style="margin-top:12px; color:rgba(255,255,255,.6); font-weight:500;">"고객님의 아바타가 되어, 내 차처럼 꼼꼼하게."</p>
+        <p>차를 파는 것과 골라주는 것은 다릅니다.<br>Car어드바이저-<span class="kabata-point">카바타</span>는 구조적으로 고객 편입니다.</p>
       </div>
       <div class="ft-links">
         <div class="ft-col"><h5>서비스</h5><a href="#services">구매 컨설팅</a><a href="#services">내 차 매각</a><a href="#process">진행 과정</a></div>
@@ -929,7 +919,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
       </div>
     </div>
     <div class="ft-bottom">
-      <span class="ft-copy">© 2026 Car어드바이저(CarAdvisor). All rights reserved.</span>
+      <span class="ft-copy">© 2026 Car어드바이저-카바타. All rights reserved.</span>
       <span class="ft-tel">010-6442-4980</span>
     </div>
   </div>
@@ -966,8 +956,8 @@ function switchForm(t){
 }
 function openForm(t){setTimeout(()=>switchForm(t),80)}
 // SUBMIT
-const TG_TOKEN='8646165822:AAEexb3m_ojm704CjQxCa7KuT61tq36dUog'
-const TG_CHAT='6040610808'
+const TG_TOKEN='8151310684:AAF7ZanjnPRnzUmAEmq8yF_oYI2bLupKgGU'
+const TG_CHAT='8741324292'
 async function sendTelegram(text){
   try{
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{
@@ -991,8 +981,15 @@ function doSubmit(e,wrapId,successId){
   msg+='─────────────────\n'
   msg+=`⏰ ${new Date().toLocaleString('ko-KR')}`
   sendTelegram(msg)
-  document.getElementById(wrapId).style.display='none'
-  document.getElementById(successId).classList.add('show')
+  const wrap=document.getElementById(wrapId)
+  const succ=document.getElementById(successId)
+  wrap.style.display='none'
+  succ.classList.add('show')
+  setTimeout(()=>{
+    succ.classList.remove('show')
+    wrap.style.display='block'
+    form.reset()
+  },4000)
 }
 // SCROLL ANIM
 const obs=new IntersectionObserver(entries=>{
