@@ -966,8 +966,8 @@ function switchForm(t){
 }
 function openForm(t){setTimeout(()=>switchForm(t),80)}
 // SUBMIT
-const TG_TOKEN='8151310684:AAF7ZanjnPRnzUmAEmq8yF_oYI2bLupKgGU'
-const TG_CHAT='8741324292'
+const TG_TOKEN='8646165822:AAEexb3m_ojm704CjQxCa7KuT61tq36dUog'
+const TG_CHAT='6040610808'
 async function sendTelegram(text){
   try{
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{
@@ -991,15 +991,8 @@ function doSubmit(e,wrapId,successId){
   msg+='─────────────────\n'
   msg+=`⏰ ${new Date().toLocaleString('ko-KR')}`
   sendTelegram(msg)
-  const wrap=document.getElementById(wrapId)
-  const succ=document.getElementById(successId)
-  wrap.style.display='none'
-  succ.classList.add('show')
-  setTimeout(()=>{
-    succ.classList.remove('show')
-    wrap.style.display='block'
-    form.reset()
-  },4000)
+  document.getElementById(wrapId).style.display='none'
+  document.getElementById(successId).classList.add('show')
 }
 // SCROLL ANIM
 const obs=new IntersectionObserver(entries=>{
