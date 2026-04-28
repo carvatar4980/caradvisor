@@ -167,7 +167,8 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 }
 
 /* ════ SECTION COMMON ════ */
-.sec{padding:88px 5%}
+/* 스크롤 시 헤더에 가려지지 않게 여백 확보 */
+.sec{padding:88px 5%; scroll-margin-top: 64px;} 
 .sec-inner{max-width:1120px;margin:0 auto}
 .sec-lbl{
   display:flex;align-items:center;gap:9px;
@@ -237,7 +238,7 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
   position:relative;overflow:hidden;transition:all .3s;cursor:default;
 }
 .why-card:hover{background:#fff;box-shadow:var(--shadow-md);z-index:1;transform:translateY(-3px)}
-.why-card::after{content:'absolute;bottom:0;left:0;right:0;height:2.5px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
+.why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2.5px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
 .why-card:hover::after{transform:scaleX(1)}
 .w-icon{font-size:28px;margin-bottom:14px}
 .why-card h3{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:8px}
@@ -374,19 +375,21 @@ nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.22)}
 .fi-lb{font-size:10px;font-weight:700;color:rgba(255,255,255,.32);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
 .fi-val{font-size:13.5px;color:rgba(255,255,255,.78);font-weight:500}
 
-/* ════ BUTTON GROUPS (KAKAO & CALL) ════ */
-.btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 6px;}
+/* 모바일 전용 버튼 그룹 */
+.mo-btn-group {
+  display: flex; flex-direction: column; gap: 12px; margin-top: 20px; width: 100%;
+}
 .kakao-btn{
   display:flex;align-items:center;justify-content:center;gap:9px;
-  background:#FEE500;color:#1A1A1A;padding:13px 20px;border-radius:8px;
-  font-size:14px;font-weight:700;transition:all .2s;width:fit-content;
+  background:#FEE500;color:#1A1A1A;padding:15px;border-radius:10px;
+  font-size:16px;font-weight:700;transition:all .2s;width:100%;
 }
 .kakao-btn:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(254,229,0,.28)}
 
 .call-btn {
   display:flex;align-items:center;justify-content:center;gap:9px;
-  background:var(--teal);color:#fff;padding:13px 20px;border-radius:8px;
-  font-size:14px;font-weight:700;transition:all .2s;width:fit-content;
+  background:var(--teal);color:#fff;padding:15px;border-radius:10px;
+  font-size:16px;font-weight:700;transition:all .2s;width:100%;
 }
 .call-btn:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(38,112,96,.38); background:var(--teal2);}
 
@@ -477,9 +480,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
 .fade-up:nth-child(5){transition-delay:.28s}
 .fade-up:nth-child(6){transition-delay:.35s}
 
-/* ════ MOBILE BTN DISPLAY CONTROL ════ */
-.mo-btn-group { display: none !important; }
-
 /* ════ RESPONSIVE ════ */
 @media(max-width:960px){
   .hero-inner,.acq-grid,.fpanel.on{grid-template-columns:1fr}
@@ -490,21 +490,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   .proc-steps::before{display:none}
   .ft-top{flex-direction:column;gap:26px}
   .ft-links,.nav-links,.nav-sep,.nav-sub{display:none}
-  
-  /* 모바일에서 버튼 2개를 폼 아래에 꽉 차게 2열 배치 */
-  .pc-btn-group { display: none !important; }
-  .mo-btn-group { 
-    display: flex !important; 
-    flex-direction: column;
-    gap: 12px;
-    width: 100%; 
-    margin-top: 24px; 
-  }
-  .mo-btn-group .kakao-btn, .mo-btn-group .call-btn {
-    width: 100%;
-    height: 52px; /* 어르신들이 누르기 편한 대형 사이즈 */
-    font-size: 16px;
-  }
 }
 @media(max-width:600px){
   .why-grid{grid-template-columns:1fr}
@@ -835,12 +820,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <li><span class="fi-ico">📋</span><div><div class="fi-lb">신용 걱정</div><div class="fi-val">신용등급 낮거나 연체 이력 있는 분</div></div></li>
           <li><span class="fi-ico">⏰</span><div><div class="fi-lb">바쁜 직장인</div><div class="fi-val">알아볼 시간이 없는 분</div></div></li>
         </ul>
-        
-        <div class="btn-group pc-btn-group">
-          <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
-          <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 문의</a>
-        </div>
-
         <div class="fi-disc"><p>입력하신 정보는 차량 추천 목적으로만 사용됩니다. 신용등급·연체 정보는 외부에 제공되지 않으며, 상담 종료 후 즉시 파기됩니다.</p></div>
       </div>
       <div class="fcard fade-up">
@@ -882,9 +861,9 @@ footer{background:var(--ink2);padding:46px 5% 30px}
             <div class="f-note">입력 정보는 차량 추천 목적으로만 사용됩니다</div>
           </form>
 
-          <div class="btn-group mo-btn-group">
+          <div class="mo-btn-group">
             <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
-            <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 문의</a>
+            <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 연결</a>
           </div>
 
         </div>
@@ -904,12 +883,6 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <li><span class="fi-ico">💰</span><div><div class="fi-lb">실수령액 비교</div><div class="fi-val">데이터 기반 투명한 가격 원하는 분</div></div></li>
           <li><span class="fi-ico">📄</span><div><div class="fi-lb">서류 대행</div><div class="fi-val">이전 서류 직접 하기 귀찮은 분</div></div></li>
         </ul>
-
-        <div class="btn-group pc-btn-group">
-          <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
-          <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 문의</a>
-        </div>
-
         <div class="fi-disc"><p>접수 즉시 시세를 확인하고 30분 내 가견적 문자를 드립니다. 가격이 맞지 않으면 거절하셔도 됩니다.</p></div>
       </div>
       <div class="fcard fade-up">
@@ -946,9 +919,9 @@ footer{background:var(--ink2);padding:46px 5% 30px}
             <div class="f-note">접수 후 30분 내 가견적 문자를 드립니다</div>
           </form>
 
-          <div class="btn-group mo-btn-group">
+          <div class="mo-btn-group">
             <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
-            <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 문의</a>
+            <a href="tel:010-6442-4980" class="call-btn">📞 전화로 바로 연결</a>
           </div>
 
         </div>
@@ -1002,14 +975,17 @@ function switchProc(t,btn){
   btn.classList.add('on')
   document.getElementById(t==='buy'?'pb':'ps').classList.add('on')
 }
-// FORM TABS
+// FORM TABS & 스크롤 오프셋 수정 (글자 겹침 완벽 해결)
 function switchForm(t){
   document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'))
   document.querySelectorAll('.fpanel').forEach(p=>p.classList.remove('on'))
   document.getElementById(t==='buy'?'tb':'ts').classList.add('on')
   document.getElementById(t==='buy'?'pb2':'ps2').classList.add('on')
+  
   setTimeout(()=>{
-    document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'})
+    const contactSec = document.getElementById('contact');
+    const y = contactSec.getBoundingClientRect().top + window.scrollY - 70; // 헤더 높이만큼 뺌
+    window.scrollTo({top: y, behavior: 'smooth'});
   },50)
 }
 function openForm(t){setTimeout(()=>switchForm(t),80)}
