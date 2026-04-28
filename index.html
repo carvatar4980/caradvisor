@@ -459,6 +459,9 @@ footer{background:var(--ink2);padding:46px 5% 30px}
 .fade-up:nth-child(5){transition-delay:.28s}
 .fade-up:nth-child(6){transition-delay:.35s}
 
+/* ════ MOBILE KAKAO BTN DISPLAY CONTROL ════ */
+.mo-kakao { display: none !important; }
+
 /* ════ RESPONSIVE ════ */
 @media(max-width:960px){
   .hero-inner,.acq-grid,.fpanel.on{grid-template-columns:1fr}
@@ -469,6 +472,15 @@ footer{background:var(--ink2);padding:46px 5% 30px}
   .proc-steps::before{display:none}
   .ft-top{flex-direction:column;gap:26px}
   .ft-links,.nav-links,.nav-sep,.nav-sub{display:none}
+  
+  /* 모바일 버튼 디스플레이 전환 처리 */
+  .pc-kakao { display: none !important; }
+  .mo-kakao { 
+    display: flex !important; 
+    width: 100%; 
+    justify-content: center; 
+    margin-top: 16px; 
+  }
 }
 @media(max-width:600px){
   .why-grid{grid-template-columns:1fr}
@@ -800,7 +812,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <li><span class="fi-ico">⏰</span><div><div class="fi-lb">바쁜 직장인</div><div class="fi-val">알아볼 시간이 없는 분</div></div></li>
           <li><span class="fi-ico">📞</span><div><div class="fi-lb">전화 상담</div><div class="fi-val">010-6442-4980</div></div></li>
         </ul>
-        <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
+        <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn pc-kakao">💬 카카오로 바로 문의</a>
         <div class="fi-disc"><p>입력하신 정보는 차량 추천 목적으로만 사용됩니다. 신용등급·연체 정보는 외부에 제공되지 않으며, 상담 종료 후 즉시 파기됩니다.</p></div>
       </div>
       <div class="fcard fade-up">
@@ -841,6 +853,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
             <button type="submit" class="sub-btn">구매의뢰 신청하기 →</button>
             <div class="f-note">입력 정보는 차량 추천 목적으로만 사용됩니다</div>
           </form>
+          <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn mo-kakao">💬 카카오로 바로 문의</a>
         </div>
         <div class="f-success" id="bs">
           <div class="si">✅</div>
@@ -859,7 +872,7 @@ footer{background:var(--ink2);padding:46px 5% 30px}
           <li><span class="fi-ico">📄</span><div><div class="fi-lb">서류 대행</div><div class="fi-val">이전 서류 직접 하기 귀찮은 분</div></div></li>
           <li><span class="fi-ico">📞</span><div><div class="fi-lb">전화 상담</div><div class="fi-val">010-6442-4980</div></div></li>
         </ul>
-        <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn">💬 카카오로 바로 문의</a>
+        <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn pc-kakao">💬 카카오로 바로 문의</a>
         <div class="fi-disc"><p>접수 즉시 시세를 확인하고 30분 내 가견적 문자를 드립니다. 가격이 맞지 않으면 거절하셔도 됩니다.</p></div>
       </div>
       <div class="fcard fade-up">
@@ -895,6 +908,8 @@ footer{background:var(--ink2);padding:46px 5% 30px}
             <button type="submit" class="sub-btn teal">매각 신청하기 →</button>
             <div class="f-note">접수 후 30분 내 가견적 문자를 드립니다</div>
           </form>
+          <a href="https://open.kakao.com/o/sKt8aksi" target="_blank" class="kakao-btn mo-kakao">💬 카카오로 바로 문의</a>
+        </div>
         <div class="f-success" id="ss">
           <div class="si">✅</div>
           <h3>접수 완료!</h3>
